@@ -47,6 +47,7 @@ def rfs(lists: dict, num_teams: int, now_team: int = 0):
             now = queue.popleft()
             for i in random.sample(lists[now], min(random.randint(0, len(lists[now]))+1 # if list is not empty
                                                    , len(lists[now]))): # if list is empty
+            # for i in lists[now][:random.randint(0, len(lists[now]))+1]: # Priority can be applied
                 if visited[i] == False:
                     queue.append(i)
                     visited[i] = True
