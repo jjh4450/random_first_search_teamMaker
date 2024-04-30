@@ -1,4 +1,5 @@
 from collections import deque
+from utill.my_random import secure_random
 import random
 
 def distribute_people(total_people, num_teams):
@@ -25,7 +26,7 @@ def rfs(lists: dict, num_teams: int, now_team: int = 0):
 
     def now_team_update():
         nonlocal now_team
-        now_team = random.randint(0, num_teams - 1)
+        now_team = secure_random(0, num_teams - 1)
         while len(team_list[now_team]) >= team_distribution[now_team]:
             now_team = (now_team + 1) % num_teams
 
@@ -45,9 +46,9 @@ def rfs(lists: dict, num_teams: int, now_team: int = 0):
             append_to_team(start)
         else:
             now = queue.popleft()
-            for i in random.sample(lists[now], min(random.randint(0, len(lists[now]))+1 # if list is not empty
+            for i in random.sample(lists[now], min(secure_random(0, len(lists[now]))+1 # if list is not empty
                                                    , len(lists[now]))): # if list is empty
-            # for i in lists[now][:random.randint(0, len(lists[now]))+1]: # Priority can be applied
+            # for i in lists[now][:secure_random(0, len(lists[now]))+1]: # Priority can be applied
                 if visited[i] == False:
                     queue.append(i)
                     visited[i] = True
