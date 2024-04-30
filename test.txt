@@ -18,3 +18,5 @@ done
 a
 done
 done
+yes
+yes

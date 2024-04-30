@@ -49,8 +49,11 @@ if __name__ == "__main__":
     save_teams_to_file(team_list)
     print("The teams have been saved to a file.")
 
-    print_done_lol()
-    print_result_as_table(team_list, 1.5)
+    if "yes" == input("Do you want to see the teams in the console? (yes/no): "):
+        if "yes" == input("Do you want to clear the console? (yes/no): "):
+            clear_console()
+        print_done_lol()
+        print_result_as_table(team_list, 1.5)
 
     # for i, team in enumerate(team_list):
     #     print(f"Team {i + 1}: {team}")
