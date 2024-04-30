@@ -45,12 +45,13 @@ def rfs(lists: dict, num_teams: int, now_team: int = 0):
             append_to_team(start)
         else:
             now = queue.popleft()
-            for i in random.sample(lists[now], len(lists[now])):
+            for i in random.sample(lists[now], min(random.randint(0, len(lists[now]))+1 # if list is not empty
+                                                   , len(lists[now]))): # if list is empty
                 if visited[i] == False:
                     queue.append(i)
                     visited[i] = True
                     append_to_team(i)
 
     team_list.sort(key=lambda x: (len(x), x))
-    
+
     return team_list

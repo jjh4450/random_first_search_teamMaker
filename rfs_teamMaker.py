@@ -45,10 +45,8 @@ if __name__ == "__main__":
     print_done()
     print("Here are the teams:")
     team_list = rfs(dict_teams, num_teams)
-    team_list.sort(key=lambda x: (len(x), x))
-
+    
     save_teams_to_file(team_list)
-
     print("The teams have been saved to a file.")
 
     print_done_lol()
