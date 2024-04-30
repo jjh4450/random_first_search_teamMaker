@@ -1,5 +1,5 @@
 from utill.console import *
-from utill.file import save_teams_to_file
+from utill.file import save_teams_to_file, save_teams_to_excel
 from logic import rfs
 
 
@@ -47,6 +47,7 @@ if __name__ == "__main__":
     team_list = rfs(dict_teams, num_teams)
     
     save_teams_to_file(team_list)
+    save_teams_to_excel(team_list)
     print("The teams have been saved to a file.")
 
     if "yes" == input("Do you want to see the teams in the console? (yes/no): "):
@@ -54,6 +55,3 @@ if __name__ == "__main__":
             clear_console()
         print_done_lol()
         print_result_as_table(team_list, 1.5)
-
-    # for i, team in enumerate(team_list):
-    #     print(f"Team {i + 1}: {team}")

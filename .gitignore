@@ -1,5 +1,5 @@
-*.txt
 *.pyc
 __pycache__/
 .vscode/
 tmp.py
+venv/
