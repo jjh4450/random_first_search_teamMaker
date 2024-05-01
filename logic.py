@@ -54,6 +54,8 @@ def rfs(lists: dict, num_teams: int, now_team: int = 0):
                     visited[i] = True
                     append_to_team(i)
 
-    team_list.sort(key=lambda x: (len(x), x))
+    team_list.sort()
+    for i in range(len(team_list)):
+        team_list[i].sort()
 
     return team_list
