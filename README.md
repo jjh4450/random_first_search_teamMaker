@@ -40,4 +40,4 @@ The algorithm uses a queue (`deque`) to manage the processing of participants in
 - Contact: [jjh4450git@gmail.com](mailto:jjh4450git@gmail.com)
 
 ## License
-- MIT
+- BSD 2-Clause License
